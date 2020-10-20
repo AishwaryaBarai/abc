@@ -1,0 +1,21 @@
+recursive:
+
+def inOrder(root):
+    if root:
+        inOrder(root.left)
+        print(root.info, end = ' ')
+        inOrder(root.right)
+        
+        
+ iterarive:
+ 
+ def inOrder(root):
+    stack = []
+    while stack or root:
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        print(root.info, end = ' ')
+        root = root.right
+    
