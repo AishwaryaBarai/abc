@@ -1,0 +1,22 @@
+recursive:
+
+def preOrder(root):
+    if root:
+        print(root.info, end = ' ')
+        preOrder(root.left)
+        preOrder(root.right)
+        
+iterative:
+
+def preOrder(root):
+    if not root:
+        return
+    stack = []
+    stack.append(root)
+    while stack:
+        root = stack.pop()
+        print(root.info,end = ' ')
+        if root.right:
+            stack.append(root.right)
+        if root.left:
+            stack.append(root.left)
