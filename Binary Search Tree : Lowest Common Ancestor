@@ -1,0 +1,13 @@
+def lca(root, p, q):
+ 
+        
+        if root.info == p or root.info == q:
+            return root
+        if p < root.info and q > root.info:
+            return root
+        if p > root.info and q < root.info:
+            return root
+        if p > root.info and q> root.info:
+            return lca(root.right,p,q)
+        else:
+            return lca(root.left,p,q)
